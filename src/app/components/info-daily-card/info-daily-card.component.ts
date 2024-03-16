@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Daily } from '../../interfaces/daily';
+import { Daily } from 'src/app/models/classes/daily';
 
 @Component({
   selector: 'app-info-daily-card',
@@ -8,8 +8,5 @@ import { Daily } from '../../interfaces/daily';
 })
 
 export class InfoDailyCardComponent {
-  @Input('notaDelDia') daily: Daily = {
-    id: 0,
-    note: ''
-  }
+  @Input('dailyInfo') daily: Daily = new Daily()
 }

@@ -1,0 +1,51 @@
+.daily-card {
+    display: grid;
+    opacity: 0.9;
+    max-height: 300px;
+    max-width: 100%;
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 5px;
+    color: var(--white-paper);
+    grid-template-rows: auto 2fr auto;
+}
+
+.daily-card .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+    overflow: hidden;
+}
+
+.daily-card .header span:first-child {
+    font-size: 3rem;
+}
+
+.daily-card .header span:last-child {
+    font-size: 0.8rem;
+}
+
+
+.daily-card .resume pre::before {
+    font-size: 1.2rem;
+    content: "📃 \A";
+    display: block;
+    white-space: pre;
+    padding-bottom: 5px;
+    padding-top: 15px;
+}
+
+.daily-card .resume pre {
+    white-space: wrap;
+    word-break: break-all;
+    margin: 0;
+    padding: 0 10px 20px 10px;
+}
+
+/* medium-devices and large-devices (tablets) */
+@media screen and (min-width: 40em) {
+    .daily-card {
+        min-width: 250px;
+    }
+}
+

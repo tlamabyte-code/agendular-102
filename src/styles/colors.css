@@ -1,0 +1,10 @@
+:root {
+    --mexican-pink-90: rgba(230, 0, 126, 0.85);
+    --white-paper: rgb(255, 251, 240);
+    --ligth-gray-45: rgba(0,0,0,0.45);
+    --darkGreen: rgb(5, 36, 20);
+    --blueOcean-90: rgba(0, 77, 139, 0.9);
+    --light-green-95: rgba(20, 139, 56, 0.55);
+    --black: black;
+    --transparent: transparent;
+}

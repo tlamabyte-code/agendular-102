@@ -8,6 +8,7 @@ import { PlaygroundComponent } from './pages/playground/playground.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { PublishDailyCardComponent } from './components/publish-daily-card/publish-daily-card.component';
 import { InfoDailyCardComponent } from './components/info-daily-card/info-daily-card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { InfoDailyCardComponent } from './components/info-daily-card/info-daily-
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

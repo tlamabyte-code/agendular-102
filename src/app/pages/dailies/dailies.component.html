@@ -1,7 +1,8 @@
 <div class="daily-wrapper">
-    <h1>Daily Page</h1>
     <!-- componente para publicar -->
-    <app-publish-daily-card />
+    <app-publish-daily-card (nuevoDaily)="handlerDailyEmitted($event)" />
     <!-- lista tarjetas de dailies -->
-    <app-info-daily-card [notaDelDia]="sampleDaily"/>
+    <div class="dailies">
+        <app-info-daily-card *ngFor="let daily of myDailies" [dailyInfo]="daily"/>
+    </div>
 </div>

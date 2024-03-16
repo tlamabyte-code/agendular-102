@@ -1,3 +1,53 @@
-<div>
-    Active Daily Card
+<div class="active-daily" [style.backgroundColor]="todayDaily.color">
+    <form #dailyForm="ngForm" (ngSubmit)="publishDaily()">
+        <div class="header">
+            <div class="emotion">
+                <select
+                    [(ngModel)]="todayDaily.emotion"
+                    [ngStyle]="
+                        {
+                            'background-color': todayDaily.emotion.length > 0 ? 'transparent' : 'white', 
+                            'border': todayDaily.emotion.length > 0 && 0
+                        }
+                    "
+                    required
+                    name="emotion"
+                >
+                    <option
+                        *ngFor="let option of emotionsCatalog"
+                    >
+                        {{ option }}
+                    </option>
+                </select>
+            </div>
+            <div class="date">
+                {{ todayDaily.timestamp | date: 'short'  }}
+                <input 
+                    [(ngModel)]="todayDaily.color"
+                    (ngModelChange)="todayDaily.getDarkerColor()"
+                    type="color"
+                    name="color"
+                />
+            </div>
+        </div>
+        <div class="note">
+            <textarea
+                [(ngModel)]="todayDaily.note"
+                name="note"
+                placeholder="¿Que tal tu día?"
+                required
+                minlength="10"
+                maxlength="150"
+            >
+            </textarea>
+        </div>
+        <div class="actions">
+            <span> {{ todayDaily.note.length }} </span>
+            <button
+                [disabled]="dailyForm.invalid"
+            >
+                💾
+            </button>
+        </div>
+    </form>
 </div>
