@@ -21,7 +21,7 @@
                 </select>
             </div>
             <div class="date">
-                {{ todayDaily.timestamp | date: 'short'  }}
+                {{ clockNow | date: 'short'  }}
                 <input 
                     [(ngModel)]="todayDaily.color"
                     (ngModelChange)="todayDaily.getDarkerColor()"

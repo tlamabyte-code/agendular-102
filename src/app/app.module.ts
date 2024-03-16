@@ -9,6 +9,7 @@ import { TasksComponent } from './pages/tasks/tasks.component';
 import { PublishDailyCardComponent } from './components/publish-daily-card/publish-daily-card.component';
 import { InfoDailyCardComponent } from './components/info-daily-card/info-daily-card.component';
 import { FormsModule } from '@angular/forms';
+import { BottomNavbarComponent } from './components/bottom-navbar/bottom-navbar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     PlaygroundComponent,
     TasksComponent,
     PublishDailyCardComponent,
-    InfoDailyCardComponent
+    InfoDailyCardComponent,
+    BottomNavbarComponent
   ],
   imports: [
     BrowserModule,
