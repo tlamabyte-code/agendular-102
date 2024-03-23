@@ -1,13 +1,7 @@
-import { IDaily } from "../interfaces/daily";
+import { IDaily, INewDaily } from "../interfaces/daily";
 
-export class Daily implements IDaily {
-    id: number = 0
-    note: string = ''
-    emotion: string = ''
+class DailyBase {
     color: string = this.rgbToHex('rgb(5, 36, 20)')
-    timestamp: number = Math.floor(new Date().getTime())
-
-    // constructor() {}
 
     rgbToHex(rgb: string): string {
         // rgb(5, 36, 20)
@@ -44,5 +38,18 @@ export class Daily implements IDaily {
             this.color = `#${(1 << 24 | darkerR << 16 | darkerG << 8 | darkerB).toString(16).slice(1)}`
         }
     }
+}
 
+export class Daily extends DailyBase implements IDaily {
+    id: number = 0
+    note: string = ''
+    emotion: string = ''
+    timestamp: number = Math.floor(new Date().getTime())
+
+    // constructor() {}
+}
+
+export class NewDaily extends DailyBase implements INewDaily {
+    note: string = ''
+    emotion: string = ''
 }

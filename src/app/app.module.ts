@@ -10,6 +10,7 @@ import { PublishDailyCardComponent } from './components/publish-daily-card/publi
 import { InfoDailyCardComponent } from './components/info-daily-card/info-daily-card.component';
 import { FormsModule } from '@angular/forms';
 import { BottomNavbarComponent } from './components/bottom-navbar/bottom-navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BottomNavbarComponent } from './components/bottom-navbar/bottom-navbar.
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

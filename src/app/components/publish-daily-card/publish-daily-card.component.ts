@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Daily } from 'src/app/models/classes/daily';
+import { Daily, NewDaily } from 'src/app/models/classes/daily';
 import { ClockService } from 'src/app/services/clock.service';
+import { DailiesService } from 'src/app/services/dailies.service';
 import { emotionsSeed } from 'src/utils/seed';
 
 @Component({
@@ -13,10 +14,13 @@ export class PublishDailyCardComponent implements OnInit {
   @Output('nuevoDaily') dailyEmitter = new EventEmitter<Daily>()
 
   clockNow: Date = new Date()
-  todayDaily: Daily = new Daily()
+  todayDaily: NewDaily = new NewDaily()
   emotionsCatalog: string[] = emotionsSeed
 
-  constructor(private clockService: ClockService) {
+  constructor(
+    private clockService: ClockService,
+    private dailiesService: DailiesService
+  ) {
 
   }
 
@@ -27,7 +31,23 @@ export class PublishDailyCardComponent implements OnInit {
   }
 
   publishDaily() {
-    this.dailyEmitter.emit(this.todayDaily)
-    this.todayDaily = new Daily()
+    // this.dailyEmitter.emit(this.todayDaily)
+    // this.todayDaily = new Daily()
+
+    this.dailiesService.postDaily(this.todayDaily)
+      .subscribe(
+        {
+          next: (data) => {
+            // Manejo de Respuesta (Satisfactoria)
+            console.log('data', data)
+            
+          },
+          error: (error) => {
+            // Manejo de Errores
+            console.log('error', error)
+            alert('Intenta de nuevo')
+          }
+        }
+      )
   }
 }

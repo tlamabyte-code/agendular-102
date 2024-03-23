@@ -21,7 +21,7 @@ export class ClockService {
     this.clock$ = interval(1000).pipe(
       // map(() => new Date())
       map((intervalValue) => {
-        console.log(intervalValue)
+        // console.log(intervalValue)
         return new Date()
       })
     )

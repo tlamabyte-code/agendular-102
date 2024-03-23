@@ -21,7 +21,7 @@
                 </select>
             </div>
             <div class="date">
-                {{ clockNow | date: 'short'  }}
+                {{ clockNow | date: 'short' }}
                 <input 
                     [(ngModel)]="todayDaily.color"
                     (ngModelChange)="todayDaily.getDarkerColor()"
@@ -36,7 +36,7 @@
                 name="note"
                 placeholder="¿Que tal tu día?"
                 required
-                minlength="10"
+                minlength="15"
                 maxlength="150"
             >
             </textarea>
